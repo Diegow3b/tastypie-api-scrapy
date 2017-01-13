@@ -4,7 +4,6 @@
 Virtualenv (This is default instaled with Ubuntu)                      
 
 ### Installation
-```
 #### 1 - Clone the project to your folder and enter on it
 ```sh
 $ git clone 
@@ -25,8 +24,9 @@ $ pip install -r requirements.txt
 $ fab runserver
 ```
 #### 5 - Access the API
+Endpoints:
 In your brower, curl or postman (nice one to make testes)
-GET (Unimplemented yet)
+GET (**Unimplemented yet**)
 Will show you all spiders you sent to crawl
 http://localhost:8000/requisicao/api/v1/requisicao/
 
