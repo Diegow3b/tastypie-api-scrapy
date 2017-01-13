@@ -4,8 +4,6 @@ import scrapy, re, json, tempfile, os
 from datetime import datetime
 from fabric.api import local
 from os.path import exists
-from pprint import pprint
-
 
 class LetrasSpider(scrapy.Spider):
     name = "letras_spider"
