@@ -33,10 +33,8 @@ class LetrasSpider(scrapy.Spider):
 
     def parse(self, response, **kwargs):
         word = self.key
-        page_cleaned = cleanhtml(response.body.lower())
-        print page_cleaned
-        words = re.findall(r'\b{word}\b'.format(word=word), page_cleaned)
-
+        page_cleaned = cleanhtml(response.body)        
+        words = re.findall(r'(?:^|\W){word}(?:$|\W)'.format(word=word), page_cleaned)
         yield {
             "palavra": self.key,
             "url" : self.url,
