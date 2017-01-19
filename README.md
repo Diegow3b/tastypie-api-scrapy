@@ -19,8 +19,9 @@ Obs.: Enter in project folder
 $ cd scrapy-api 
 $ pip install -r requirements.txt
 ```
-#### 4 - Run the server
+#### 4 - Run the migrations and the server
 ```sh
+$ fab migrations
 $ fab runserver
 ```
 #### 5 - Access the API

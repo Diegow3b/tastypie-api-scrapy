@@ -34,10 +34,7 @@ class RequisicaoResource(ModelResource):
         self.method_check(request, allowed=['post'])
         # self.is_authenticated(request)
         self.throttle_check(request)
-        payload = json.loads(request.body)
-        # print '\n\n\n\n\n\n-------------------------------------------------'
-        # print payload.get('json'
-        # print '-------------------------------------------------\n\n\n\n\n\n'
+        payload = json.loads(request.body)       
         try:
             if 'key' in payload and 'url' in payload:
                 Requisicao.call_spider(payload.get('key'), payload.get('url'),\
