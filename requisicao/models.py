@@ -28,7 +28,7 @@ class Requisicao(models.Model):
     @staticmethod
     def call_spider(key, url, json=None):        
         # Modo Simples
-        local("scrapy crawl letras_spider -o {json} -t json -a url={url} -a key={key} -a json={json}".format(
+        local("scrapy crawl letras_spider -o {json} -t json -a url={url} -a key='{key}' -a json={json}".format(
             json = json if json else 'crawler_palavras.json',
             url = url,
             key = key
