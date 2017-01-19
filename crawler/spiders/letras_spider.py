@@ -5,6 +5,11 @@ from datetime import datetime
 from fabric.api import local
 from os.path import exists
 
+def cleanhtml(raw_html):
+  cleanr = re.compile('<.*?>')
+  cleantext = re.sub(cleanr, '', raw_html)
+  return cleantext
+
 class LetrasSpider(scrapy.Spider):
     name = "letras_spider"
     allowed_domains = []
@@ -28,7 +33,8 @@ class LetrasSpider(scrapy.Spider):
 
     def parse(self, response, **kwargs):
         word = self.key
-        page_cleaned = response.body.lower()
+        page_cleaned = cleanhtml(response.body.lower())
+        print page_cleaned
         words = re.findall(r'\b{word}\b'.format(word=word), page_cleaned)
 
         yield {
