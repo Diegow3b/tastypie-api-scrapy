@@ -11,7 +11,6 @@ idna==2.2
 incremental==16.10.1
 ipaddress==1.0.18
 lxml==3.7.2
-paramiko==2.1.1
 parsel==1.1.0
 pyasn1==0.1.9
 pyasn1-modules==0.0.8
